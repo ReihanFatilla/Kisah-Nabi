@@ -6,6 +6,7 @@ import com.reift.kisahnabiapp.core.data.source.remote.RemoteDataSource
 import com.reift.kisahnabiapp.core.domain.model.Kisah
 import com.reift.kisahnabiapp.core.domain.repository.IKisahRepository
 import com.reift.kisahnabiapp.core.utils.DataMapper
+import io.reactivex.rxjava3.core.Flowable
 
 class KisahRepository private constructor(
     private val remoteData: RemoteDataSource
@@ -24,10 +25,17 @@ class KisahRepository private constructor(
         }
     }
 
-    override fun getKisahNabi(): LiveData<List<Kisah>> {
-        return Transformations.map(remoteData.getKisahNabi()){
+    override fun getKisahNabi(): Flowable<List<Kisah>> {
+
+        // Menggunakan RXJava
+        return remoteData.getKisahNabi().map {
             DataMapper.mapResponseToDomain(it)
         }
+
+        // Menggunakan LiveData
+//        return Transformations.map(remoteData.getKisahNabi()){
+//            DataMapper.mapResponseToDomain(it)
+//        }
     }
 
 }
