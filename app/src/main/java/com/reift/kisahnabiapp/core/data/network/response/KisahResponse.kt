@@ -1,29 +1,28 @@
-package com.reift.kisahnabiapp.data
+package com.reift.kisahnabiapp.core.data.network.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
-@Parcelize
 data class KisahResponse(
 	@field:SerializedName("usia")
-	val usia: String? = null,
+	val usia: String,
 
 	@field:SerializedName("icon_url")
-	val iconUrl: String? = null,
+	val iconUrl: String,
 
 	@field:SerializedName("tmp")
-	val tmp: String? = null,
+	val tmp: String,
 
 	@field:SerializedName("image_url")
-	val imageUrl: String? = null,
+	val imageUrl: String,
 
 	@field:SerializedName("name")
-	val name: String? = null,
+	val name: String,
 
 	@field:SerializedName("thn_kelahiran")
-	val thnKelahiran: String? = null,
+	val thnKelahiran: String,
 
 	@field:SerializedName("description")
-	val description: String? = null
-) : Parcelable
+	val description: String
+)

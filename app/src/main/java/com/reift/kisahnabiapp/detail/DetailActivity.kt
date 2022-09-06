@@ -1,9 +1,10 @@
-package com.reift.kisahnabiapp.presentation.detail
+package com.reift.kisahnabiapp.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.reift.kisahnabiapp.data.KisahResponse
+import com.reift.kisahnabiapp.core.data.network.response.KisahResponse
+import com.reift.kisahnabiapp.core.domain.model.Kisah
 import com.reift.kisahnabiapp.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        val data = intent.getParcelableExtra<KisahResponse>("EXTRA_DATA")
+        val data = intent.getParcelableExtra<Kisah>("EXTRA_DATA")
         binding.apply {
             Glide.with(this@DetailActivity)
                 .load(data?.imageUrl)

@@ -1,3 +1,5 @@
+package com.reift.kisahnabiapp.core.utils
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -5,15 +7,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
-import com.reift.kisahnabiapp.data.KisahResponse
+import com.reift.kisahnabiapp.core.domain.model.Kisah
 import com.reift.kisahnabiapp.databinding.ItemKisahBinding
-import com.reift.kisahnabiapp.helper.OnItemClickCallback
 
 class KisahAdapter : RecyclerView.Adapter<KisahAdapter.MyViewHolder>() {
 
-    private var listNabi = ArrayList<KisahResponse>()
+    private var listNabi = ArrayList<Kisah>()
 
-    fun setData(data: List<KisahResponse>?) {
+    fun setData(data: List<Kisah>?) {
         if (data == null) return
         listNabi.clear()
         listNabi.addAll(data)

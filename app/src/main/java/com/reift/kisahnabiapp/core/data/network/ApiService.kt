@@ -1,6 +1,6 @@
-package com.reift.kisahnabiapp.data.network
+package com.reift.kisahnabiapp.core.data.network
 
-import com.reift.kisahnabiapp.data.KisahResponse
+import com.reift.kisahnabiapp.core.data.network.response.KisahResponse
 import io.reactivex.rxjava3.core.Flowable
 import retrofit2.http.GET
 

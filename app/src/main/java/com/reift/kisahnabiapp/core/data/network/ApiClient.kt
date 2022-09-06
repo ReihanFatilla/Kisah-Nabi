@@ -1,4 +1,4 @@
-package com.reift.kisahnabiapp.data.network
+package com.reift.kisahnabiapp.core.data.network
 
 import com.reift.kisahnabiapp.BuildConfig
 import okhttp3.OkHttpClient
@@ -10,7 +10,8 @@ import java.util.concurrent.TimeUnit
 
 object ApiClient {
     fun getApiService(): ApiService {
-        val httpLoggingInterceptor: HttpLoggingInterceptor = if (BuildConfig.DEBUG){
+        val httpLoggingInterceptor = if (BuildConfig.DEBUG)
+        {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         } else {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)

@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KisahNabiApp" >
         <activity
-            android:name=".presentation.detail.DetailActivity"
+            android:name="com.reift.kisahnabiapp.detail.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
