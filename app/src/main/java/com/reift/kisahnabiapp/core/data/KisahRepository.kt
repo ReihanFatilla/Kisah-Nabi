@@ -2,7 +2,7 @@ package com.reift.kisahnabiapp.core.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
-import com.reift.kisahnabiapp.core.data.network.RemoteDataSource
+import com.reift.kisahnabiapp.core.data.source.remote.RemoteDataSource
 import com.reift.kisahnabiapp.core.domain.model.Kisah
 import com.reift.kisahnabiapp.core.domain.repository.IKisahRepository
 import com.reift.kisahnabiapp.core.utils.DataMapper

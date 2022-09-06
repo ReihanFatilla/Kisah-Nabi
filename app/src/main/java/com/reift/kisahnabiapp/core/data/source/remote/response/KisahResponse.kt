@@ -1,8 +1,6 @@
-package com.reift.kisahnabiapp.core.data.network.response
+package com.reift.kisahnabiapp.core.data.source.remote.response
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
 
 data class KisahResponse(
 	@field:SerializedName("usia")

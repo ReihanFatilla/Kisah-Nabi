@@ -1,8 +1,9 @@
-package com.reift.kisahnabiapp.core.data.network
+package com.reift.kisahnabiapp.core.data.source.remote
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.reift.kisahnabiapp.core.data.network.response.KisahResponse
+import com.reift.kisahnabiapp.core.data.source.remote.network.ApiService
+import com.reift.kisahnabiapp.core.data.source.remote.response.KisahResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 
@@ -12,7 +13,7 @@ class RemoteDataSource private constructor(private val apiService: ApiService) {
         @Volatile
         private var instance: RemoteDataSource? = null
 
-        fun getInstance(service: ApiService): RemoteDataSource{
+        fun getInstance(service: ApiService): RemoteDataSource {
             return instance ?: synchronized(this){
                 instance ?: RemoteDataSource(service)
             }

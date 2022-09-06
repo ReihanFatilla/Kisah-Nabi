@@ -4,11 +4,8 @@ import com.reift.kisahnabiapp.core.utils.KisahAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.reift.kisahnabiapp.core.data.network.response.KisahResponse
 import com.reift.kisahnabiapp.core.domain.model.Kisah
 import com.reift.kisahnabiapp.core.presentation.KisahViewModelFactory
 import com.reift.kisahnabiapp.databinding.ActivityMainBinding

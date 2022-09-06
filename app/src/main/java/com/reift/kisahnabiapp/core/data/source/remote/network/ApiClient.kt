@@ -1,4 +1,4 @@
-package com.reift.kisahnabiapp.core.data.network
+package com.reift.kisahnabiapp.core.data.source.remote.network
 
 import com.reift.kisahnabiapp.BuildConfig
 import okhttp3.OkHttpClient
