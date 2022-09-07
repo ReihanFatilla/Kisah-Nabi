@@ -22,10 +22,6 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        tidak di gunakan setelah menggunakan Koin
-//        val factory = KisahViewModelFactory.getInstance(this)
-//        viewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
-
 
         viewModel.listKisahNabi.observe(this){ showData(it) }
 

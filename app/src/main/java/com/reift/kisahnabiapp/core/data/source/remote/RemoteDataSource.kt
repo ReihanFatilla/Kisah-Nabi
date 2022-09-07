@@ -12,44 +12,21 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 
 class RemoteDataSource(private val apiService: ApiService) {
 
-//    tidak perlu saat menggunakan Koin
-//    companion object{
-//        @Volatile
-//        private var instance: RemoteDataSource? = null
-//
-//        fun getInstance(service: ApiService): RemoteDataSource {
-//            return instance ?: synchronized(this){
-//                instance ?: RemoteDataSource(service)
-//            }
-//        }
-//    }
-
     fun getKisahNabi(): Flowable<List<KisahResponse>>{
-        // Menggunakan RXJava
         val result = PublishSubject.create<List<KisahResponse>>()
 
-        // Menggunakan LiveData
-//        val result = MutableLiveData<List<KisahResponse>>()
 
         apiService.getKisahNabi()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-                // Menggunakan RXJava
                 val dataArray = it
                 result.onNext(
                     dataArray
                 )
-                // Menggunakan LiveData
-//                result.value = it
             }
 
-        // Menggunakan RXJava
         return result.toFlowable(BackpressureStrategy.BUFFER)
-
-        // Menggunakan LiveData
-//        return result
-
 
     }
 }
