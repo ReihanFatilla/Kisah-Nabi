@@ -7,15 +7,16 @@ import com.reift.kisahnabiapp.core.domain.repository.IKisahRepository
 import com.reift.kisahnabiapp.core.domain.usecase.KisahInteractor
 import com.reift.kisahnabiapp.core.domain.usecase.KisahUseCase
 
+// sekarang menggunakan Koin (CoreModule)
 object Injection {
-    fun provideRepository(): IKisahRepository{
-        val remoteData = RemoteDataSource.getInstance(ApiClient.getApiService())
-
-        return KisahRepository.getInstance(remoteData)
-    }
-
-    fun provideUseCase(): KisahUseCase{
-        val repository = provideRepository()
-        return KisahInteractor(repository)
-    }
+//    fun provideRepository(): IKisahRepository{
+//        val remoteData = RemoteDataSource.getInstance(ApiClient.getApiService())
+//
+//        return KisahRepository.getInstance(remoteData)
+//    }
+//
+//    fun provideUseCase(): KisahUseCase{
+//        val repository = provideRepository()
+//        return KisahInteractor(repository)
+//    }
 }

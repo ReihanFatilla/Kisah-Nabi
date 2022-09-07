@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveDataReactiveStreams
 import androidx.lifecycle.ViewModel
 import com.reift.kisahnabiapp.core.domain.usecase.KisahUseCase
 
-class MainViewModel(kisahUseCase: KisahUseCase): ViewModel() {
+class MainViewModel(kisahUseCase: KisahUseCase): ViewModel(){
 
     // Menggunakan RXJava
     val listKisahNabi = LiveDataReactiveStreams.fromPublisher(kisahUseCase.getKisahNabi())

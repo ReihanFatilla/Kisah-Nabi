@@ -10,18 +10,19 @@ import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.PublishSubject
 
-class RemoteDataSource private constructor(private val apiService: ApiService) {
+class RemoteDataSource(private val apiService: ApiService) {
 
-    companion object{
-        @Volatile
-        private var instance: RemoteDataSource? = null
-
-        fun getInstance(service: ApiService): RemoteDataSource {
-            return instance ?: synchronized(this){
-                instance ?: RemoteDataSource(service)
-            }
-        }
-    }
+//    tidak perlu saat menggunakan Koin
+//    companion object{
+//        @Volatile
+//        private var instance: RemoteDataSource? = null
+//
+//        fun getInstance(service: ApiService): RemoteDataSource {
+//            return instance ?: synchronized(this){
+//                instance ?: RemoteDataSource(service)
+//            }
+//        }
+//    }
 
     fun getKisahNabi(): Flowable<List<KisahResponse>>{
         // Menggunakan RXJava

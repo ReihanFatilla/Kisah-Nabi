@@ -4,27 +4,27 @@ import com.reift.kisahnabiapp.core.utils.KisahAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.reift.kisahnabiapp.core.domain.model.Kisah
-import com.reift.kisahnabiapp.core.presentation.KisahViewModelFactory
 import com.reift.kisahnabiapp.databinding.ActivityMainBinding
 import com.reift.kisahnabiapp.core.utils.OnItemClickCallback
 import com.reift.kisahnabiapp.detail.DetailActivity
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding as ActivityMainBinding
 
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val factory = KisahViewModelFactory.getInstance(this)
-        viewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
+//        tidak di gunakan setelah menggunakan Koin
+//        val factory = KisahViewModelFactory.getInstance(this)
+//        viewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
 
 
         viewModel.listKisahNabi.observe(this){ showData(it) }
