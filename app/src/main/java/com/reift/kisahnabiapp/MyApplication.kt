@@ -1,7 +1,9 @@
 package com.reift.kisahnabiapp
 
 import android.app.Application
-import com.reift.kisahnabiapp.core.di.*
+import com.reift.core.di.*
+import com.reift.kisahnabiapp.di.useCaseModule
+import com.reift.kisahnabiapp.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

@@ -1,13 +1,13 @@
 package com.reift.kisahnabiapp.main
 
-import com.reift.kisahnabiapp.core.utils.KisahAdapter
+import com.reift.core.utils.KisahAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import com.reift.kisahnabiapp.core.domain.model.Kisah
+import com.reift.core.domain.model.Kisah
 import com.reift.kisahnabiapp.databinding.ActivityMainBinding
-import com.reift.kisahnabiapp.core.utils.OnItemClickCallback
+import com.reift.core.utils.OnItemClickCallback
 import com.reift.kisahnabiapp.detail.DetailActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         viewModel.listKisahNabi.observe(this){ showData(it) }
 

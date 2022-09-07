@@ -3,7 +3,7 @@ package com.reift.kisahnabiapp.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.reift.kisahnabiapp.core.domain.model.Kisah
+import com.reift.core.domain.model.Kisah
 import com.reift.kisahnabiapp.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
