@@ -4,6 +4,7 @@ import com.reift.core.utils.KisahAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.reift.core.domain.Resource
 import com.reift.core.domain.model.Kisah
@@ -29,11 +30,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showData(data: Resource<List<Kisah>>) {
-        binding.recyclerMain.apply {
+        binding.apply {
             val mAdapter = KisahAdapter()
-            mAdapter.setData(data.data)
-            layoutManager = GridLayoutManager(this@MainActivity, 2)
-            adapter = mAdapter
+            when(data){
+                is Resource.Loading -> {
+                    shimmerLayout.root.startShimmer()
+                    shimmerLayout.root.visibility = View.VISIBLE
+                    recyclerMain.visibility = View.GONE
+                }
+                is Resource.Success -> {
+                    shimmerLayout.root.stopShimmer()
+                    shimmerLayout.root.visibility = View.GONE
+                    recyclerMain.visibility = View.VISIBLE
+                    mAdapter.setData(data.data)
+                }
+            }
+            recyclerMain.layoutManager = GridLayoutManager(this@MainActivity, 2)
+            recyclerMain.adapter = mAdapter
             mAdapter.setOnItemClickCallback(object : OnItemClickCallback {
                 override fun onItemClicked(item: Kisah) {
                     startActivity(

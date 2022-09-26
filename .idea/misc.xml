@@ -5,9 +5,11 @@
       <map>
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.13697916666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24864130434782608" />
+        <entry key="app/src/main/res/layout/activity_main_shimmer.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/item_kisah.xml" value="0.13728470111448834" />
         <entry key="app/src/main/res/layout/row_item_kisah.xml" value="0.24864130434782608" />
         <entry key="core/src/main/res/drawable/ic_launcher_background.xml" value="0.148" />
+        <entry key="core/src/main/res/layout/item_kisah.xml" value="0.28229166666666666" />
       </map>
     </option>
   </component>

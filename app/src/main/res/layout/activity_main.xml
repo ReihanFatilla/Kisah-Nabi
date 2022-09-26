@@ -5,6 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".main.MainActivity">
 
+    <include
+        android:id="@+id/shimmer_layout"
+        layout="@layout/activity_main_shimmer"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_main"
         android:layout_width="match_parent"
