@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
+import com.reift.core.domain.Resource
 import com.reift.core.domain.model.Kisah
 import com.reift.kisahnabiapp.databinding.ActivityMainBinding
 import com.reift.core.utils.OnItemClickCallback
@@ -27,10 +28,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun showData(data: List<Kisah>?) {
+    private fun showData(data: Resource<List<Kisah>>) {
         binding.recyclerMain.apply {
             val mAdapter = KisahAdapter()
-            mAdapter.setData(data)
+            mAdapter.setData(data.data)
             layoutManager = GridLayoutManager(this@MainActivity, 2)
             adapter = mAdapter
             mAdapter.setOnItemClickCallback(object : OnItemClickCallback {

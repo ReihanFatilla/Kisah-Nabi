@@ -54,4 +54,8 @@ dependencies {
 
     // LiveData ReactiveStreams
     implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.5.1"
+
+    // Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
 }

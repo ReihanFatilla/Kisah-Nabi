@@ -11,11 +11,14 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 class RemoteDataSource(private val apiService: ApiService) {
 
     fun getKisahNabi(): Flowable<List<KisahResponse>>{
-        val result = PublishSubject.create<List<KisahResponse>>()
+        return apiService.getKisahNabi()
+    }
 
+    private fun <T> getFlowableList(kisahNabi: Flowable<T>): Flowable<T> {
 
-        apiService.getKisahNabi()
-            .subscribeOn(Schedulers.io())
+        val result = PublishSubject.create<T>()
+
+        kisahNabi.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
                 val dataArray = it
@@ -25,6 +28,5 @@ class RemoteDataSource(private val apiService: ApiService) {
             }
 
         return result.toFlowable(BackpressureStrategy.BUFFER)
-
     }
 }
